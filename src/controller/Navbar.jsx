@@ -16,7 +16,7 @@ function Navbar({cart,setcart}) {
                     <form className="d-flex">
                         <button className="btn btn-outline-dark" onClick={()=>navigate('/mycart')}>
                             <i className="bi-cart-fill me-1"></i>
-                            My Cart
+                            Cart
                             <span className="badge bg-dark text-white ms-1 rounded-pill">{cart}</span>
                         </button>
                     </form>
