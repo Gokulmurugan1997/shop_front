@@ -6,7 +6,7 @@ function Logout() {
     let navigate = useNavigate()
 
     let handleLogout = useCallback(async()=>{
-            navigate("/intro")
+            navigate("/login")
     }, [])
 
   return <div>
