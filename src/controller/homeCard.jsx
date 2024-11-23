@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import ApiRoutes from "../utils/ApiRoutes";
 import AxiosService from "../utils/AxiosService";
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 
 function Card({ cart, setCart, product }) {
-
-  const [id, setId] = useState(product._id)
+  const [id, setId] = useState(product._id);
+  const [toggle, setToggle] = useState(true);
   const handleClick = async () => {
-      try {
-        const res = await AxiosService.delete(`${ApiRoutes.DELETECART.path}/${id}`)
-        window.location.reload();
-      } catch (error) {
-        toast.error(error.response?.data?.message || error.message || "An error occurred");
-      }
+    setCart(prevCart => prevCart + 1);
+    setToggle(false)
+
+    try {
+
+      const res = await AxiosService.get(`${ApiRoutes.MYCART.path}/${id}`);
+
+      toast.success("Product added to cart successfully!");
+
+    } catch (error) {
+      toast.error(error.response?.data?.message || error.message || "An error occurred");
+    }
   };
-
-
 
   return (
     <div className="col mb-5">
@@ -34,7 +37,7 @@ function Card({ cart, setCart, product }) {
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
           <div className="text-center">
             <button className="btn btn-outline-dark mt-auto" onClick={handleClick}>
-              {"Remove from cart"}
+            {toggle ? "Buy" : "Buy+1"}
             </button>
           </div>
         </div>

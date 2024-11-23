@@ -10,7 +10,8 @@ import SellerLogin from "../controller/seller/login.jsx"
 import SellerSignup from "../controller/seller/signin.jsx"
 import SellerResetPassword from "../controller/seller/resetPassword.jsx"
 import AddCart from "../controller/addCart.jsx";
-
+import Cart from "../controller/cart.jsx";
+import Purchase from "../controller/purchase/purchase.jsx";
 
 const AppRoutes = [
     {
@@ -60,6 +61,14 @@ const AppRoutes = [
     {
         path:"/addCart",
         element:<AddCart/>
+    },
+    {
+        path:"/mycart",
+        element:<Cart/>
+    },
+    {
+        path:"/purchase",
+        element:<Purchase/>
     }
 ]
 export default AppRoutes

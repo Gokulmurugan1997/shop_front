@@ -74,3 +74,34 @@ color: white;
 .cart{
    margin-left: 70%;
 }
+.cartNav{
+ color: rgb(81, 210, 214);
+ font-size: larger;
+}
+.carthome{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.cart1{
+  margin: 100px;
+  width: 350px;
+  height: 400px;
+  border: 3px solid rgba(149, 67, 165, 0.801);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(234, 215, 236);
+  border-radius: 20px;
+}
+.head{
+  color: rgb(29, 17, 199);
+}
+.col1{
+  color: rgb(49, 9, 230);
+  justify-content: baseline;
+}
+.buttonc{
+margin-left: 20%;
+  
+}

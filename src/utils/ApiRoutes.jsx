@@ -35,6 +35,22 @@ const ApiRoutes = {
     GETCART:{
         path:"/seller/getcart",
         authenticate:false
+    },
+    MYCART:{
+        path:"/seller",
+        authenticate:false
+    },
+    GETMYCART:{
+        path:"/seller/cart",
+        authenticate:false
+    },
+    DELETECART:{
+        path:"/seller",
+        authenticate:false
+    },
+    COSTCART:{
+        path:"/seller",
+        authenticate:false
     }
 }
 
