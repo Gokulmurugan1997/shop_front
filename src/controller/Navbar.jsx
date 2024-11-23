@@ -14,17 +14,10 @@ function Navbar({cart, setcart}) {
                     <button className="btn btn-outline-dark" onClick={() => navigate('/seller/login')}>
                         Sell Product
                     </button>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                    <button className="btn btn-outline-dark" onClick={() => navigate('/mycart')}>
+                    <span className="badge bg-dark text-white ms-1 rounded-pill">Cart {cartCount}</span>
                     </button>
-                    <div className="collapse navbar-collapse cart" id="navbarSupportedContent">
-                        <form className="d-flex">
-                            <button className="btn btn-outline-dark" onClick={() => navigate('/mycart')}>
-                                <i className="bi-cart-fill me-1"></i>
-                                <span className="badge bg-dark text-white ms-1 rounded-pill">Cart {cartCount}</span>
-                            </button>
-                        </form>
-                    </div>
+                    
                 </div>
                 <Logout /> {/* Assuming this is a component that handles logging out */}
             </nav>

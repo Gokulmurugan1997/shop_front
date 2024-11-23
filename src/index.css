@@ -9,11 +9,12 @@
   background-size: cover;
 }
 
-/* Mobile devices */
+
 @media screen and (max-width: 600px) {
   .login_wrapper {
     width: 80%;
     border-radius: 10%;
+    color: rgb(245, 247, 248);
   }
   .intro {
     font-size: 14px;
@@ -30,12 +31,15 @@
   .carthome {
     grid-template-columns: auto;
   }
+  .data{
+    color: rgb(245, 247, 248);
+  }
 }
 
-/* Tablets */
 @media screen and (max-width: 1024px) {
   .login_wrapper {
     width: 60%;
+    color: rgb(245, 247, 248);
   }
   .intro {
     font-size: 16px;
@@ -50,12 +54,17 @@
   .carthome {
     grid-template-columns: auto auto;
   }
+  .data{
+    color: rgb(245, 247, 248);
+  }
+
 }
 
-/* Desktop */
+
 @media screen and (min-width: 1024px) {
   .login_wrapper {
     width: 40%;
+    color: rgb(245, 247, 248);
   }
   .intro {
     font-size: 18px;
@@ -73,4 +82,8 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
   }
+  .data{
+    color: rgb(245, 247, 248);
+  }
+
 }
