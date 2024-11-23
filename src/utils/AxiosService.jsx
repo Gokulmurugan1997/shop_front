@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let AxiosService = axios.create({
-    baseURL:"http://localhost:8001",
+    baseURL:"https://shop-back-ioot.onrender.com",
     headers:{
         "Content-Type":"application/json"
     }
