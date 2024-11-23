@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './form.module.css'; // Import CSS Module
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import AxiosService from '../../utils/AxiosService';
+import ApiRoutes from '../../utils/ApiRoutes';
 
 function Purchase() {
   const [address, setAddress] = useState('');
@@ -10,21 +12,27 @@ function Purchase() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    const validationErrors = {};
-    if (!address) validationErrors.address = 'Address is required';
-    if (!phoneNumber || !/^\d{10}$/.test(phoneNumber)) {
-      validationErrors.phoneNumber = 'Phone number must be 10 digits';
+    try {
+      const res = await AxiosService.delete(ApiRoutes.DELETEALL.path)
+      const validationErrors = {};
+      if (!address) validationErrors.address = 'Address is required';
+      if (!phoneNumber || !/^\d{10}$/.test(phoneNumber)) {
+        validationErrors.phoneNumber = 'Phone number must be 10 digits';
+      }
+  
+      if (Object.keys(validationErrors).length > 0) {
+        setErrors(validationErrors);
+      } else {
+        alert('Purchase Completed successfully! please track the link sent to your mobile no !! Thank you');
+        toast.success("We appreciate your business and are excited for you to enjoy your new product.");
+        navigate('/home')
+      }
+    } catch (error) {
+      
     }
-
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-    } else {
-      alert('Purchase Completed successfully! please track the link sent to your mobile no !! Thank you');
-      toast.success("Thank you");
-      navigate('/home')
-    }
+ 
   };
 
   return (

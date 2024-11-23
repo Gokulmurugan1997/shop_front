@@ -51,6 +51,10 @@ const ApiRoutes = {
     COSTCART:{
         path:"/seller",
         authenticate:false
+    },
+    DELETEALL:{
+        path:"/seller/cart",
+        authenticate:false
     }
 }
 

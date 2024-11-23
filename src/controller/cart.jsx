@@ -20,6 +20,7 @@ function Cart() {
       try {
         const res = await AxiosService.get(ApiRoutes.GETMYCART.path);
         const res1 = await AxiosService.get(ApiRoutes.COSTCART.path)
+        
         const { totalAmount, totalCount } = res1.data;
 
         setProducts(res.data);
@@ -29,8 +30,18 @@ function Cart() {
         toast.error(error.response.data.message || error.message);
       }
     };
-    const handleClick = ()=>{
-        navigate('/purchase')
+    const handleClick = async()=>{
+        try {
+
+  navigate('/purchase')
+
+          
+
+        } catch (error) {
+          toast.error(error.response?.data?.message || error.message || "An error occurred");
+        }
+        
+        
     }
   
     useEffect(() => {
